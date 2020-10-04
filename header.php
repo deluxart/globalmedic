@@ -9,36 +9,29 @@
  * @since LevelUp 1.0
  */
 ?><!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" lang="ru-RU" prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" lang="ru-RU" prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8) ]><!-->
 <html lang="ru-RU" prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
 <!--<![endif]-->
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0,  user-scalable=no">
-    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Cache-Control" content="no-cache">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     
-    <link rel="stylesheet preload" type="text/css" href="<?php echo get_template_directory_uri(); ?>/slick/slick-theme.css">
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css"> -->
-    <link rel="stylesheet preload" type="text/css" href="<?php echo get_template_directory_uri(); ?>/slick/slick.css">
+    <!-- <link rel="stylesheet preload" type="text/css" href="< ?php echo get_template_directory_uri(); ?>/slick/slick-theme.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="< ?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet preload" type="text/css" href="< ?php echo get_template_directory_uri(); ?>/slick/slick.css"> -->
     <link rel='stylesheet' id='google-fonts-style-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400%2C400italic%2C600%2C600italic%2C700%2C300%7CWork+Sans%3A400%2C300%2C600%7CRoboto%3A300%2C400%2C400italic%2C500%2C500italic%2C700%2C900%2C600&#038;ver=9.6' type='text/css' media='all' />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/reset.css?<?php echo date(get_option('date_format')); ?>">
-    <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/all.min.css"> -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/td-multipurpose.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/typicons.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/slider-pro.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/menu-ember.css?<?php echo date(get_option('date_format')); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/fonts/geometria/stylesheet.css?<?php echo date(get_option('date_format')); ?>">
-    <meta http-equiv="Cache-Control" content="no-cache">
-
+    <!-- <link rel="stylesheet" href="< ?php echo get_template_directory_uri(); ?>/css/all.min.css"> -->
+    <!-- <link rel="stylesheet" href="< ?php echo get_template_directory_uri(); ?>/css/td-multipurpose.css"> -->
+    <!-- <link rel="stylesheet" href="< ?php echo get_template_directory_uri(); ?>/css/typicons.css"> -->
+    <!-- <link rel="stylesheet" href="< ?php echo get_template_directory_uri(); ?>/css/slider-pro.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="< ?php echo get_template_directory_uri(); ?>/css/menu-ember.css?< ?php echo date(get_option('date_format')); ?>"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="< ?php echo get_template_directory_uri(); ?>/fonts/geometria/stylesheet.css?< ?php echo date(get_option('date_format')); ?>"> -->
     <link rel="icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png">
-        <!-- Стили для новосй страниы - Alexander O. -->
+    <!-- Стили для новосй страниы - Alexander O. -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/styles-all.min.css">
+
     <?php wp_head(); ?> 
 
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/search-form.css">
@@ -166,7 +159,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <?php } ?>
                     </div>
                     <div class="phone">
-                        <a class="<?php pll_e('popmake-obratnyj-zvonok','Global'); ?> call-btn btn"><i class="fas fa-phone" aria-hidden="true"></i><span><?php pll_e('Call_back','Global'); ?></span></a>
+                        <a class="<?php pll_e('popmake-obratnyj-zvonok','Global'); ?> call-btn btn"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/phone_white.svg" alt=""><span><?php pll_e('Call_back','Global'); ?></span></a>
                     </div>
                     <div>
      <div class="menu-ember">

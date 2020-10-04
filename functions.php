@@ -413,31 +413,17 @@ endif;
  * @since Twenty Fifteen 1.0
  */
 function Ember_scripts() {
-	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'Ember-fonts', Ember_fonts_url(), array(), null );
-
-	// Add Genericons, used in the main stylesheet.
-	// wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.2' );
-	wp_enqueue_style( 'gm-swiper', get_template_directory_uri() . '/css/swiper-bundle.min.css', array(), '3.2' );
+	wp_enqueue_style( 'gm-styles-all', get_template_directory_uri() . '/dist/styles-all.min.css', array(), '3.2' ); // Compile SCSS styles
 
 	// Load our main stylesheet.
 	wp_enqueue_style( 'Ember-style', get_stylesheet_uri() );
 
-	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'Ember-ie', get_template_directory_uri() . '/css/ie.css', array( 'Ember-style' ), '20141010' );
-	wp_style_add_data( 'Ember-ie', 'conditional', 'lt IE 9' );
-
-	// Load the Internet Explorer 7 specific stylesheet.
-	wp_enqueue_style( 'Ember-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'Ember-style' ), '20141010' );
-	wp_style_add_data( 'Ember-ie7', 'conditional', 'lt IE 8' );
-
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	// wp_enqueue_script( 'Ember-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
-	wp_enqueue_script( 'gm-swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js','','1',true);
-	wp_enqueue_script( 'gm-sliders-swiper', get_template_directory_uri() . '/js/sliders-swiper.js','','1',true);
+	wp_enqueue_script( 'gm-swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js','','1',true); // Add Swiper slider
+	wp_enqueue_script( 'gm-sliders-swiper', get_template_directory_uri() . '/js/sliders-swiper.js','','1',true); // Add Swiper sliders
 }
 add_action( 'wp_enqueue_scripts', 'Ember_scripts' );
 
@@ -609,23 +595,6 @@ register_nav_menus(array(
 // Для полноэкранного меню
 ));
 
-// function add_additional_class_on_li($classes, $item, $args) {
-//     if($args->add_li_class) {
-//         $classes[] = $args->add_li_class;
-//     }
-//     return $classes;
-// }
-// add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
-
-// function add_menu_link_class( $atts, $item, $args ) {
-//   if($args->link_class) {
-//     $atts['class'] = $args->link_class;
-//   }
-//   return $atts;
-// }
-// add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
-
-
 /** чтоб РЕДАКТОР не удалял теги span без атрибутов */
 function override_mce_options($initArray) {
     $opts = '*[*]';
@@ -712,26 +681,11 @@ add_filter('single_template', create_function(
 
 
 // Загрузка SVG
-
 function my_myme_types($mime_types){
     $mime_types['svg'] = 'image/svg+xml'; // поддержка SVG
     return $mime_types;
 }
 add_filter('upload_mimes', 'my_myme_types', 1, 1);
-
-
-// add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-
-// function special_nav_class ($classes, $item) {
-//     if (in_array('current-menu-item', $classes) ){
-//         $classes[] = 'active ';
-//     }
-//     return $classes;
-// }
-
-
-// END Загрузка SVG
-
 
 
 function php_in_widgets($widget_content) {
@@ -792,10 +746,7 @@ add_theme_support( 'editor-color-palette', array(
 ) );
 
 
-
-
 // Add shortcode_spoiler
-
 function sanitize_callback( $options ) { 
 	foreach( $options as $name => & $val ) {
 		if( $name == 'input' )
@@ -803,7 +754,6 @@ function sanitize_callback( $options ) {
 	}
 	return $options;
 }
-
 
 
 // Спойлер для WP by Alexander Osadchyy
@@ -865,35 +815,14 @@ function html_button_spoiler() {
 // Спойлер для WP by Alexander Osadchyy
 
 
-
 /**
  * Enqueue Gutenberg block editor style
  */
 function Ember_gutenberg_editor_styles() {
-    wp_enqueue_style( 'Ember-block-editor-styles', get_theme_file_uri( '/style-editor.css' ), false, '1.0', 'all' );
+    wp_enqueue_style( 'Ember-block-editor-styles', get_theme_file_uri( '/css/style-editor.css' ), false, '1.0', 'all' );
 }
 
 add_action( 'enqueue_block_editor_assets', 'Ember_gutenberg_editor_styles' );
-
-function column_block_cgb_editor_assets(){
-    // Scripts.
-    wp_enqueue_script(
-        'column_block-cgb-block-js', // Handle.
-        plugins_url('/dist/blocks.build.js', dirname(__FILE__)),
-        array('wp-blocks', 'wp-i18n', 'wp-element')
-    );
-
-    // Styles.
-    wp_enqueue_style(
-        'column_block-cgb-block-editor-css', // Handle.
-        plugins_url('dist/blocks.editor.build.css', dirname(__FILE__)),
-        array('wp-edit-blocks')
-    );
-} // End function column_block_cgb_editor_assets().
-
-// Hook: Editor assets.
-add_action('enqueue_block_editor_assets', 'column_block_cgb_editor_assets');
-
 
 function my_mario_block_category( $categories, $post ) {
 	return array_merge(
@@ -908,27 +837,6 @@ function my_mario_block_category( $categories, $post ) {
 }
 add_filter( 'block_categories', 'my_mario_block_category', 10, 2);
 
-function my_stylesheet1(){
-wp_enqueue_style("style-admin",get_bloginfo('stylesheet_directory')."/css/font-awesome.min.css");
-}
-add_action('admin_head', 'my_stylesheet1');
-
-
-// function disable_visual_editor($can)
-// {
-//     global $post;
-
-// 	$post_type = get_post_type($post);
-// 	if ($post_type == 'page') {
-//         return false;
-//     }
-
-//     return $can;
-// }
-
-// add_filter('user_can_richedit', 'disable_visual_editor');
-
-
 require get_template_directory() . '/inc/options_page.php';
 require get_template_directory() . '/inc/options_event-modal.php';
 require get_template_directory() . '/inc/clinics.php';
@@ -936,21 +844,10 @@ require get_template_directory() . '/inc/treatment.php';
 require get_template_directory() . '/inc/doctors.php';
 require get_template_directory() . '/inc/gm-reviews.php';
 
-
-
-
-
 pll_register_string('Call_back', 'Call_back');
 pll_register_string('popmake-obratnyj-zvonok', 'popmake-obratnyj-zvonok');
 pll_register_string('Home', 'Home');
 pll_register_string('Copyright', 'Copyright');
-
-
-
-
-
-
-
 
 /*
  * "Хлебные крошки" для WordPress

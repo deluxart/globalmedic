@@ -1,0 +1,196 @@
+
+#header {
+    @media (max-width: 992px) {
+        background: #353d4c; 
+        position: relative;
+
+        .container {
+            position: inherit;
+        }
+    }
+    .top {
+        border-bottom: 1px solid #eaeaea; 
+        background: #fff; 
+        padding: 10px 0; 
+        transition: 0.5s all;
+        display: block;
+
+        .content {
+            display: grid; 
+            grid-template-columns: 1fr auto;
+            ul {
+                &.socials {
+                    display: flex;
+
+                    img {
+                        display: block;
+                    }
+
+                    li {
+                        display: inline-block; 
+                        margin-right: 10px; 
+                        display: grid; 
+                        align-items: center; 
+                        height: 22px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        &.phone {
+                            display: grid; 
+                            grid-template-columns: auto 1fr; 
+                            align-items: center; 
+                            grid-gap: 8px;
+
+                            a {
+                                color: #000 !important; 
+                                text-decoration: none; 
+                                font-weight: bold;
+                            }
+
+                            img {
+                                width: 14px;
+                                padding-right: 4px; 
+                                color: #1db4c1;
+                            }
+                        }
+
+                        &.fb {
+                            a {
+                                color: #3b5998;
+                            }
+                        }
+
+                        &.in {
+                            a {
+                                color: #e1306c;
+                            }
+                        }
+
+                        &.icon_viber {
+                            a {
+                                color: #59267c;
+                            }
+                        }
+
+                        &.icon_whatsapp {
+                            a {
+                                color: #128c7e;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .middle {
+        padding: 20px 0; 
+        transition: 0.5s all;
+
+        @media (max-width: 992px) {
+            padding: 5px 0;
+        }
+
+        .content {
+            display: grid; 
+            grid-template-columns: auto auto 1fr; 
+            align-items: center; 
+            grid-column-gap: 20px; 
+            text-align: right;
+
+            @media (max-width: 992px) {
+                text-align: center;
+                grid-template-columns: auto 1fr auto;
+
+                & > div {
+                    &:nth-child(1) {
+                        grid-column: 2/3;
+                        grid-row: 1/2;
+                    }
+                    &:nth-child(2) {
+                        grid-column: 1/2;
+                        grid-row: 1/2;
+                    }
+                    &:nth-child(3) {
+                        grid-column: 3/4;
+                        grid-row: 1/2;
+                    }
+                }
+
+                a {
+                    i {
+                        color: #fff;
+                    }
+                }
+
+                img {
+                    width: 100px;
+                }
+            }
+
+            a {
+                i {
+                    color: #444444;
+                }
+            }
+
+            .logo {
+                img {
+                    width: 180px; 
+                    transition: 0.5s all;
+                }
+            }
+
+            .phone {
+                a {
+                    &.call-btn {
+                        font-size: 12px; 
+                        border-radius: 30px; 
+                        background: -webkit-linear-gradient(200deg, #39e5d4, #22a3d6); 
+                        background: linear-gradient(200deg, #39e5d4, #22a3d6); 
+                        color: #fff !important; 
+                        padding: 6px 24px; 
+                        display: grid; 
+                        grid-template-columns: auto 1fr;
+
+                        img {
+                            background: none; 
+                            width: 14px;
+                            line-height: normal;
+                            width: auto; 
+                            height: auto; 
+                            margin-right: 4px;
+
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 992px) {
+
+                    &:hover {
+                        a {
+                            background: none;
+                        }
+                    }
+                    i {
+                        &:after {
+                            display: none;
+                        }
+                    }
+                    span {
+                        display: none;
+                    }
+
+                    .d-none {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+}

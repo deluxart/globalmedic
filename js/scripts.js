@@ -1,19 +1,19 @@
-jQuery( document ).ready(function( $ ) {
-        jQuery( '.medic-slider' ).sliderPro({
-            width: "100%",
-            autoHeight: true,
-            fade: true,
-            arrows: true,
-            buttons: false,
-            fullScreen: true,
-            shuffle: true,
-            smallSize: 500,
-            mediumSize: 1000,
-            largeSize: 3000,
-            thumbnailArrows: true,
-            autoplay: false
-        });
-    });
+// jQuery( document ).ready(function( $ ) {
+//         jQuery( '.medic-slider' ).sliderPro({
+//             width: "100%",
+//             autoHeight: true,
+//             fade: true,
+//             arrows: true,
+//             buttons: false,
+//             fullScreen: true,
+//             shuffle: true,
+//             smallSize: 500,
+//             mediumSize: 1000,
+//             largeSize: 3000,
+//             thumbnailArrows: true,
+//             autoplay: false
+//         });
+//     });
 
 
 jQuery('[data-fancybox="images"]').fancybox({
@@ -237,32 +237,32 @@ jQuery(document).ready(function(){
 jQuery('.spoiler > .head').on('click', function(e){
   jQuery(this).parent('div.spoiler').children('.cont').stop().slideToggle(300).toggleClass('active');
   jQuery(this).toggleClass('active');
-  jQuery('.medic-slider').sliderPro('update');
+//   jQuery('.medic-slider').sliderPro('update');
   e.preventDefault();
 });
 
-jQuery(window).load(function() {
-    jQuery('.medic-slider').each(function (index, value){
-      jQuery(this).sliderPro('update');
-    });
-});
+// jQuery(window).load(function() {
+//     jQuery('.medic-slider').each(function (index, value){
+//       jQuery(this).sliderPro('update');
+//     });
+// });
 
 
 
 
-    jQuery(document).ready(function() {
-        setTimeout(function(){
-            jQuery('.medic-slider').sliderPro('update');
-        },3000)
-    });
+    // jQuery(document).ready(function() {
+    //     setTimeout(function(){
+    //         jQuery('.medic-slider').sliderPro('update');
+    //     },3000)
+    // });
 
 
 
 
-jQuery( window ).scroll(function() {
-    jQuery('.medic-slider').sliderPro('update');
-    console.log('updated');
-});
+// jQuery( window ).scroll(function() {
+//     jQuery('.medic-slider').sliderPro('update');
+//     console.log('updated');
+// });
 
 
 jQuery(document).ready(function(){

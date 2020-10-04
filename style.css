@@ -398,8 +398,7 @@ ul.list > li:last-child { border: 0; }
 
 ul.clinic-tags { display: grid;  grid-template-columns: 1fr 1fr; grid-gap: 10px; margin-top: 10px; }
 ul.clinic-tags > li { background: #f1f1f1; border-radius: 5px; padding: 3px 10px; font-size: 13px; color: #777; text-align: center; }
-ul.clinic-tags > li > a { color: #777; }
-
+ul.clinic-tags > li > a { color: #777; text-decoration: none; }
 ul.clinic-links { display: grid;  grid-template-columns: 1fr 1fr; grid-gap: 10px; margin-top: 10px; }
 ul.clinic-links > li { text-align: center; font-size: 14px; align-items: center; }
 ul.clinic-links > li > a.btn {  white-space: normal; color: #447a9d; border: 1px solid #447a9d; font-size: 11px; display: block; }
@@ -450,24 +449,7 @@ body.single .entry-header h1 {
 
 .tg-layout-masonry .tg-item-media-holder {     max-height: 210px; overflow: hidden; }
 
-#header .phone a.call-btn { font-size: 12px; border-radius: 30px; background: -webkit-linear-gradient(200deg, #39e5d4, #22a3d6); background: linear-gradient(200deg, #39e5d4, #22a3d6); color: #fff !important; padding: 6px 24px; display: grid; grid-template-columns: auto 1fr; }
-#header .phone a.call-btn i { background: none; line-height: normal; width: auto; height: auto; margin-right: 4px; }
-#header .phone a.call-btn i { background: none; line-height: normal; width: auto; height: auto; margin-right: 4px; }
-#header .phone > a > i:after { display: none !important; }
-/*#header .top { display: none; }*/
-#header .top .content ul.socials { display: flex; }
-#header .top .content ul.socials img { display: block; }
-#header .top .content ul.socials li.phone { display: grid; grid-template-columns: auto 1fr; align-items: center; grid-gap: 8px;}
-#header .top .content ul.socials li.phone a { color: #000 !important; text-decoration: none; font-weight: bold; }
-#header .top .content ul.socials li.phone i { padding-right: 4px; color: #1db4c1; }
-#header .top .content ul.socials li.fb a {color: #3b5998;} 
-#header .top .content ul.socials li.in a {color: #e1306c;} 
-#header .top .content ul.socials li.icon_viber a {color: #59267c;} 
-#header .top .content ul.socials li.icon_whatsapp a {color: #128c7e;} 
 
-#header .top .content ul.socials li { display: inline-block; margin-right: 10px; display: grid; align-items: center; height: 22px; }
-#header .top .content ul.socials li a { color: #aaaaaa; }
-#header .top .content ul.socials li:last-child { margin-right: 0; }
 
 
 body.page-id-25 { background: #fafafa; }
@@ -526,7 +508,7 @@ h2.bg { background: -webkit-linear-gradient(210deg, #52e3d9, #04a3d3); backgroun
 .page-list > strong { margin-bottom: 20px; display: block; }
 .page-list p { font-size: 13px; line-height: 22px; color: #666; margin-bottom: 20px; }
 .page-list h3 { font-weight: 300; font-size: 28px; line-height: 40px; margin-bottom: 20px; }
-.page-list ul { margin: 20px 0; }
+.page-list ul { margin: 20px 0; padding: 0; }
 .page-list ul li { position: relative; padding: 3px 0 3px 21px; font-size: 15px; line-height: 24px; display: grid; grid-template-columns: 1fr auto; align-items: center; }
 .page-list ul li:before { position: absolute; left: 0; font-family: FontAwesome; content: "\f054"; color: #1db4c1; top: 4px; }
 
@@ -546,12 +528,7 @@ h2.bg { background: -webkit-linear-gradient(210deg, #52e3d9, #04a3d3); backgroun
 
 .grid-columns-4 { display: grid; grid-template-columns: repeat(4, 1fr); }
 
-#header .top { border-bottom: 1px solid #eaeaea; background: #fff; padding: 10px 0; transition: 0.5s all; }
-#header .top .content { display: grid; grid-template-columns: 1fr auto; }
-#header .middle { padding: 20px 0; transition: 0.5s all; }
-#header .middle .content { display: grid; grid-template-columns: auto auto 1fr ; align-items: center; grid-column-gap: 20px; text-align: right; }
-#header .middle .content a i { color: #444444; }
-#header .middle .content .logo img { width: 180px; transition: 0.5s all; }
+
 
 #home-slider {  position: relative; padding-top: 62px; }
 #home-slider .content { display: grid; grid-template-columns: 1fr 1fr; align-items: center; grid-template-columns: 1fr 1fr; }
@@ -575,8 +552,9 @@ h2.bg { background: -webkit-linear-gradient(210deg, #52e3d9, #04a3d3); backgroun
 
 #treatment .grid-columns-2 { grid-gap: 30px;      max-width: 1116px;  margin: 0 auto 30px auto; }
 #treatment .grid-columns-2 i { font-size: 80px; margin-bottom: 20px;     background: linear-gradient(200deg, #39e5d4, #23d2db); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-#treatment .grid-columns-2 p { color: #666; font-size: 13px; }
+#treatment .grid-columns-2 p, #treatment .grid-columns-2 p a { color: #666; font-size: 13px; text-decoration: none; }
 #treatment .grid-columns-2 h4 { margin-bottom: 20px; font-weight: 300; font-size: 21px;     line-height: 24px; max-width: 260px; margin: 0 auto 20px auto; }
+#treatment .grid-columns-2 h4 a { text-decoration: none; color: #000; }
 #treatment .grid-columns-2 > div { background: #f7f7f7; padding: 30px; }
 
 
@@ -769,26 +747,8 @@ a.show-more { margin-top: 20px; background: -webkit-linear-gradient(200deg, #39e
 
 
 @media (max-width: 992px) {
-  #header { background: #353d4c; position: relative; }
-  #header .top { display: block; }
-  #header .middle { padding: 5px 0; }
-  #header .middle .content { text-align: center; }
-  #header .middle .content { display: grid; grid-template-columns: auto 1fr auto; }
-  #header .middle .content > div:nth-child(1) {grid-column: 2/3;grid-row: 1/2;}
-  #header .middle .content > div:nth-child(2) {grid-column: 1/2;grid-row: 1/2;}
-  #header .middle .content > div:nth-child(3) {grid-column: 3/4;grid-row: 1/2;}
-  #header .middle .content a i {color: #fff;}
-  #header .middle .content img { width: 100px; }
-  #header .container {position: inherit;}
-  #header .middle .content .phone span { display: none; }
-  #header .middle .content .phone .d-none { display: none !important; }
-    #header .middle .content .phone:hover a {background: none;}
-  #header .middle .content .phone i:after { display: none; }
+
   a.menu-mobile:hover { color: #fff; background: #414959; }
-
-
-
-
 
 .tg-layout-masonry .tg-item-inner { display: grid !important; grid-template-columns: 90px 1fr !important; }
 .tg-item .tg-item-excerpt, .tg-element-10 { display: none !important; }
